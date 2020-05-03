@@ -4,7 +4,7 @@ services:
     serve:
       restart: on-failure
       build:
-        image: sundowndev/http-server:latest
+        image: sundowndev/serve:latest
         command: "root ./public"
         networks:
         - default

@@ -1,4 +1,4 @@
-# http-server
+# serve
 
 Production ready HTTP server for static file serving
 
@@ -6,10 +6,10 @@ Production ready HTTP server for static file serving
 
 ```
 # Download the archive
-$ curl -L "https://github.com/sundowndev/http-server/releases/download/v2.0.6/http-server_$(uname -s)_$(uname -m).tar.gz" -o http-server.tar.gz
+$ curl -L "https://github.com/sundowndev/serve/releases/download/v1.0.0/serve_$(uname -s)_$(uname -m).tar.gz" -o serve.tar.gz
 
 # Extract the binary
-tar xfv http-server.tar.gz
+tar xfv serve.tar.gz
 
 # Run the software
 ./serve -h
@@ -17,6 +17,10 @@ tar xfv http-server.tar.gz
 # You can install it globally
 mv ./serve /usr/bin/serve
 ```
+
+If the installation fails, it probably means your OS/arch is not suppored.
+
+Please check the output of echo "$(uname -s)_$(uname -m)" in your terminal and see if it's available on the [GitHub release page](https://github.com/sundowndev/serve/releases).
 
 ## Usage
 
@@ -45,7 +49,7 @@ $ serve -root . -port 8080
 ### Docker image
 
 ```
-$ docker run -it -v $PWD/public:/app/public:ro -p 80:80 sundowndev/http-server
+$ docker run -it -v $PWD/public:/app/public:ro -p 80:80 sundowndev/serve
 ```
 
 #### Using compose
@@ -55,7 +59,7 @@ version: '3.7'
 
 services:
     serve:
-      container_name: http-server
+      container_name: serve
       restart: on-failure
       build:
         context: .

@@ -1,4 +1,4 @@
-module github.com/sundowndev/http-server
+module github.com/sundowndev/serve
 
 go 1.13
 

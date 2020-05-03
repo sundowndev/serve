@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
     serve:
-      container_name: http-server
+      container_name: serve
       restart: on-failure
       build:
         context: .

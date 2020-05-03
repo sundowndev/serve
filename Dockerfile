@@ -1,9 +1,9 @@
 FROM golang:1.14-alpine as go_builder
 
 LABEL maintainer="Sundowndev" \
-  org.label-schema.name="http-server" \
+  org.label-schema.name="serve" \
   org.label-schema.description="Production ready HTTP server for static file serving." \
-  org.label-schema.url="https://github.com/sundowndev/http-server" \
+  org.label-schema.url="https://github.com/sundowndev/serve" \
   org.label-schema.vendor="Sundowndev" \
   org.label-schema.schema-version="1.0"
 
