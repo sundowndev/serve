@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+    serve:
+      container_name: http-server
+      restart: on-failure
+      build:
+        context: .
+        dockerfile: Dockerfile
+      command:
+        - "--port 80"
+        - "--root ./public"
+      ports:
+        - "80:80"
