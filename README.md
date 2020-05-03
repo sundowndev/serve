@@ -5,7 +5,17 @@ Production ready HTTP server for static file serving
 ## Installation
 
 ```
-$ curl ...
+# Download the archive
+$ curl -L "https://github.com/sundowndev/http-server/releases/download/v2.0.6/http-server_$(uname -s)_$(uname -m).tar.gz" -o http-server.tar.gz
+
+# Extract the binary
+tar xfv http-server.tar.gz
+
+# Run the software
+./serve --help
+
+# You can install it globally
+mv ./serve /usr/bin/serve
 ```
 
 ## Usage
@@ -30,6 +40,33 @@ Launch a HTTP server to serve files in the current directory :
 
 ```
 $ serve -root . -port 8080 
+```
+
+### Docker image
+
+```
+$ docker run -it -v $PWD/public:/app/public:ro -p 80:80 sundowndev/http-server
+```
+
+#### Using compose
+
+```
+version: '3.7'
+
+services:
+    serve:
+      container_name: http-server
+      restart: on-failure
+      build:
+        context: .
+        dockerfile: Dockerfile
+      command: "--root ./public"
+      environment:
+        - GIN_MODE=release
+      volumes:
+        - ./fixtures:/app/public:ro
+      ports:
+        - "80:80"
 ```
 
 ## License
