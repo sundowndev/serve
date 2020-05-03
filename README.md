@@ -9,13 +9,13 @@ Production ready HTTP server for static file serving
 $ curl -L "https://github.com/sundowndev/serve/releases/download/v1.0.0/serve_$(uname -s)_$(uname -m).tar.gz" -o serve.tar.gz
 
 # Extract the binary
-tar xfv serve.tar.gz
+$ tar xfv serve.tar.gz
 
 # Run the software
-./serve -h
+$ ./serve -h
 
 # You can install it globally
-mv ./serve /usr/bin/serve
+$ mv ./serve /usr/bin/serve
 ```
 
 If the installation fails, it probably means your OS/arch is not suppored.
@@ -54,7 +54,7 @@ $ docker run -it -v $PWD/public:/app/public:ro -p 80:80 sundowndev/serve
 
 #### Using compose
 
-```
+```yml
 version: '3.7'
 
 services:
