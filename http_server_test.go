@@ -20,11 +20,11 @@ func performRequest(r http.Handler, method, path string) (*httptest.ResponseReco
 func TestApi(t *testing.T) {
 	assert := assert.New(t)
 	r := gin.Default()
-	go main()
+	go Serve(r, "/", "./fixtures", ":80")
 
 	t.Run("Serve", func(t *testing.T) {
 		t.Run("Get index.html", func(t *testing.T) {
-			res, err := performRequest(r, "GET", "/fixtures")
+			res, err := performRequest(r, "GET", "/")
 
 			body, _ := ioutil.ReadAll(res.Body)
 
