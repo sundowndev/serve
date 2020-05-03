@@ -1,5 +1,10 @@
 # serve
 
+![action](https://img.shields.io/endpoint.svg?url=https://actions-badge.atrox.dev/sundowndev/serve/badge?ref=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/sundowndev/serve)](https://goreportcard.com/report/github.com/sundowndev/serve)
+![release](https://img.shields.io/github/release/SundownDEV/serve.svg)
+[![codecov](https://codecov.io/gh/sundowndev/serve/branch/master/graph/badge.svg)](https://codecov.io/gh/sundowndev/serve)
+
 Production ready HTTP server for static file serving
 
 ## Installation
