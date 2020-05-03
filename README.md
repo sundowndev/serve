@@ -12,7 +12,7 @@ $ curl -L "https://github.com/sundowndev/http-server/releases/download/v2.0.6/ht
 tar xfv http-server.tar.gz
 
 # Run the software
-./serve --help
+./serve -h
 
 # You can install it globally
 mv ./serve /usr/bin/serve
@@ -60,7 +60,7 @@ services:
       build:
         context: .
         dockerfile: Dockerfile
-      command: "--root ./public"
+      command: "-root ./public"
       environment:
         - GIN_MODE=release
       volumes:

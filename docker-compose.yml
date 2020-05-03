@@ -7,7 +7,7 @@ services:
       build:
         context: .
         dockerfile: Dockerfile
-      command: "--root ./public"
+      command: "-root ./public"
       environment:
         - GIN_MODE=release
       volumes:
