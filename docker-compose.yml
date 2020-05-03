@@ -7,8 +7,10 @@ services:
       build:
         context: .
         dockerfile: Dockerfile
-      command:
-        - "--port 80"
-        - "--root ./public"
+      command: "--root ./public"
+      environment:
+        - GIN_MODE=release
+      volumes:
+        - ./fixtures:/app/public:ro
       ports:
         - "80:80"
