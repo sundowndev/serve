@@ -18,9 +18,10 @@ func main() {
 	flag.StringVar(&addr, "addr", "0.0.0.0", "The address to listen to. Defaults to 0.0.0.0")
 	flag.Parse()
 
-	router := gin.Default()
-	router.Static(prefix, root)
+	r := gin.Default()
+
+	r.Static(prefix, root)
 
 	// Listen and serve on 0.0.0.0:80
-	router.Run(addr + ":" + port)
+	r.Run(addr + ":" + port)
 }
