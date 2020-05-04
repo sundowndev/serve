@@ -33,5 +33,14 @@ jobs:
     - name: Build
       run: go build -v .
 
-    - name: Test
-      run: go test -v .
+    - name: Lint
+      run: |
+        curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.24.0
+        ./bin/golangci-lint
+
+    - name: Test & upload code coverage
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      run: |
+        go test -race -coverprofile=coverage.txt -covermode=atomic -v ./...
+        bash <(curl -s https://codecov.io/bash)
