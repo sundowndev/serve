@@ -53,8 +53,10 @@ $ serve -root . -port 8080
 
 ### Docker image
 
+Launch a HTTP server to serve files in the `public` directory :
+
 ```
-$ docker run -it -v $PWD/public:/app/public:ro -p 80:80 sundowndev/serve
+$ docker run -it --rm -v $PWD/public:/app/public:ro -p 80:80 sundowndev/serve -root public
 ```
 
 #### Using compose
