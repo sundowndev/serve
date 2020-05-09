@@ -5,7 +5,7 @@
 ![release](https://img.shields.io/github/release/SundownDEV/serve.svg)
 [![codecov](https://codecov.io/gh/sundowndev/serve/branch/master/graph/badge.svg)](https://codecov.io/gh/sundowndev/serve)
 
-Production ready HTTP server for static file serving
+Lightweight, simple, production ready HTTP server for static file serving.
 
 ## Installation
 
@@ -68,9 +68,7 @@ services:
     serve:
       container_name: serve
       restart: on-failure
-      build:
-        context: .
-        dockerfile: Dockerfile
+      image: sundowndev/serve:latest
       command: "-root ./public"
       environment:
         - GIN_MODE=release
