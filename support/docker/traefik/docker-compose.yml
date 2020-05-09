@@ -3,10 +3,9 @@ version: '3.7'
 services:
     serve:
       restart: on-failure
-      build:
-        image: sundowndev/serve:latest
-        command: "-root ./public"
-        networks:
+      image: sundowndev/serve:latest
+      command: "-root ./public"
+      networks:
         - default
         - web
       environment:
