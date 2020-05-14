@@ -6,7 +6,6 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -19,8 +18,9 @@ func performRequest(r http.Handler, method, path string) (*httptest.ResponseReco
 
 func TestApi(t *testing.T) {
 	assert := assert.New(t)
-	r := gin.Default()
-	go Serve(r, "/", "./fixtures", ":80")
+	parseFlags()
+	r := newServer()
+	RegisterStatic(r, "/", "./fixtures")
 
 	t.Run("Serve", func(t *testing.T) {
 		t.Run("Get index.html", func(t *testing.T) {
