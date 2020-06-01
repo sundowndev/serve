@@ -35,13 +35,13 @@ $ serve -h
 
 Usage of http_server:
   -addr string
-    	The address to listen to. Defaults to 0.0.0.0 (default "0.0.0.0")
+    	The address to listen to.
   -port string
-    	The port to listen to. Defaults to 80 (default "80")
+    	The port to listen to.
   -prefix string
-    	The URI prefix path. Default is / (default "/")
+    	The URI prefix path.
   -root string
-    	the directory to serve files from. Defaults to the current dir (default ".")
+    	the directory to serve files from.
 ```
 
 Launch a HTTP server to serve files in the current directory :
@@ -69,8 +69,6 @@ services:
       restart: on-failure
       image: sundowndev/serve:latest
       command: "-root ./public"
-      environment:
-        - GIN_MODE=release
       volumes:
         - ./fixtures:/app/public:ro
       ports:
