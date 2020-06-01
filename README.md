@@ -10,7 +10,7 @@ Lightweight, simple, production ready HTTP server for static file serving.
 
 ```
 # Download the archive
-$ curl -L "https://github.com/sundowndev/serve/releases/download/v1.0.0/serve_$(uname -s)_$(uname -m).tar.gz" -o serve.tar.gz
+$ curl -L "https://github.com/sundowndev/serve/releases/download/v1.1.0/serve_$(uname -s)_$(uname -m).tar.gz" -o serve.tar.gz
 
 # Extract the binary
 $ tar xfv serve.tar.gz
